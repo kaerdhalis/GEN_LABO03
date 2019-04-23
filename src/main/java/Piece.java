@@ -1,6 +1,7 @@
 public class Piece {
 
     private String name;
+    private Square location = null;
 
     /**
      *
@@ -8,6 +9,25 @@ public class Piece {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * change la piece de case
+     * @param square nouvelle case
+     */
+    public void movePiece(Square square){
+
+        this.location = square;
+    }
+
+    /**
+     *
+     * @return nom de la case ou se situe la piece
+     */
+
+    public Square isOnSquare(){
+
+        return location;
     }
 
     /**
