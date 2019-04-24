@@ -5,6 +5,10 @@ public class GoToJailSquare extends Square {
         super("GoToJail");
     }
 
+    /**
+     * action effectue en arrivant sur la case
+     * @param p joueur jouant ce tour
+     */
     @Override
     void landedOn(Player p) {
 

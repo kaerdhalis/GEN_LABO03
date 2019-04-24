@@ -15,6 +15,7 @@ public class Board {
 
         board = new ArrayList<>(SQUARES);
 
+        //ajout case depart
         board.add(GO, new GoSquare());
 
 
@@ -33,6 +34,7 @@ public class Board {
             else
             board.add(i, new RegularSquare("Square " + i));
         }
+        //ajout case prison
         board.add(JAIL, new JailSquare());
 
     }
