@@ -33,4 +33,18 @@ class BoardTest {
 
         assertEquals(board.getSquare((value + faceValue)%40),board.newPosition(square,faceValue));
     }
+
+
+    @Test
+    @DisplayName("hasSpecialSquare Test")
+    void hasSpecialSquare() {
+        Board board = new Board();
+
+        assertEquals(board.StartCase(),new GoSquare());
+        assertEquals(board.JailSquare(),new JailSquare());
+
+        assertNotEquals(board.StartCase(),board.JailSquare());
+
+    }
+
 }

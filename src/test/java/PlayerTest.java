@@ -44,6 +44,7 @@ class PlayerTest {
         Player player = new Player("bobby",new Piece("auto"), new Dice[]{
                 new Dice(),new Dice()},new Board());
 
+        assertNotNull(player.getBoard());
         assertEquals(player.getPiece().isOnSquare(),player.getBoard().StartCase());
 
     }

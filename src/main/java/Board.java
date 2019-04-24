@@ -1,9 +1,11 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Board {
 
     private static final int SQUARES = 40;
     private static final int GO = 0;
+    private static final int JAIL = 20;
     private ArrayList<Square> board;
 
     /**
@@ -13,10 +15,25 @@ public class Board {
 
         board = new ArrayList<>(SQUARES);
 
-        board.add(0, new GoSquare());
+        board.add(GO, new GoSquare());
+
+
+        Random rn = new Random();
+        int gotojail = rn.nextInt(JAIL);
+
+        int income = rn.nextInt(SQUARES - JAIL + 1) + JAIL+1;
+
         for (int i = 1; i < SQUARES; i++) {
+
+            if(i == gotojail)
+                board.add(i, new GoToJailSquare());
+
+            else if(i == income)
+                board.add(i, new IncomeTaxSquare());
+            else
             board.add(i, new RegularSquare("Square " + i));
         }
+        board.add(JAIL, new JailSquare());
 
     }
 
@@ -28,6 +45,15 @@ public class Board {
 
              return board.get(GO);
         }
+
+    /**
+     *
+     * @return case de prison
+     */
+    public Square JailSquare() {
+
+        return board.get(JAIL);
+    }
 
 
     /**
