@@ -7,8 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PieceTest {
 
+    @BeforeEach
+    void init(TestInfo testInfo) {
+        System.out.println("Start..." + testInfo.getDisplayName());
+    }
+
     @ParameterizedTest
     @ValueSource(strings = { "shoe", "hat", "auto","ship" })
+    @DisplayName("PieceHasName Test")
     void PieceHasName(String name) {
 
         Piece piece = new Piece(name);
@@ -18,6 +24,7 @@ class PieceTest {
     }
 
     @Test
+    @DisplayName("squareIsNullatInit Test")
     void squareIsNullatInit(){
 
         Piece piece = new Piece("shoe");
