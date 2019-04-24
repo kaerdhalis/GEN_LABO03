@@ -19,8 +19,9 @@ class IncomeTaxSquareTest {
         Square square = new IncomeTaxSquare();
 
         Player p = new Player("steve",new Piece("shoe"),new Dice[2],new Board());
+        p.addCash(1500);
         square.landedOn(p);
-        assertTrue(p.getNetWorth()==1300);
+        assertTrue(p.getNetWorth()==2800);
 
     }
 
