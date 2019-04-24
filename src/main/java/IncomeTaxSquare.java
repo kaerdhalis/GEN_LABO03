@@ -4,6 +4,10 @@ public class IncomeTaxSquare extends Square {
         super("Income Tax Square");
     }
 
+    /**
+     * action effectue en arrivant sur la case
+     * @param p joueur jouant ce tour
+     */
     @Override
     void landedOn(Player p) {
 
