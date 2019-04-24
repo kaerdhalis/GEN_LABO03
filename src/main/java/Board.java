@@ -13,9 +13,9 @@ public class Board {
 
         board = new ArrayList<>(SQUARES);
 
-        board.add(0, new Square("Go"));
+        board.add(0, new GoSquare());
         for (int i = 1; i < SQUARES; i++) {
-            board.add(i, new Square("Square " + i));
+            board.add(i, new RegularSquare("Square " + i));
         }
 
     }
