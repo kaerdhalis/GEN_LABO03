@@ -5,6 +5,8 @@ public class Player {
     private  Dice[] dices;
     private Board board;
 
+    private int cash;
+
 
 
     /**
@@ -19,6 +21,7 @@ public class Player {
         this.board = board;
 
         this.piece.movePiece(board.StartCase());
+        this.cash = 1500;
     }
 
     /**
@@ -62,6 +65,37 @@ public class Player {
 
         System.out.println(name + " landed on  "+ piece.isOnSquare().getName());
 
+    }
+
+    /**
+     * ajout cash a l'acompte
+     * @param sum a ajouter
+     */
+    public void addCash(int sum){
+
+        cash += sum;
+    }
+
+    /**
+     * retire cash  a l'acompte,si sum devient negative reste a zero
+     * @param sum a enlever
+     */
+    public void removeCash(int sum){
+
+        cash -=sum;
+
+        if(cash<0){
+            cash= 0;
+        }
+    }
+
+    /**
+     * affiche la richesse du joueur
+     * @return richesse
+     */
+    public int getNetWorth(){
+
+        return cash;
     }
 }
 

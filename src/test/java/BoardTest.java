@@ -15,7 +15,7 @@ class BoardTest {
     @DisplayName("startCase Test")
     void startCase() {
         Board board = new Board();
-        assertEquals(board.StartCase(),new Square("Go"));
+        assertEquals(board.StartCase(),new GoSquare());
     }
 
     @RepeatedTest(5)

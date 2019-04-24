@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Square {
+public abstract class Square {
 
     private String name;
 
@@ -55,6 +55,8 @@ public class Square {
         public int hashCode() {
             return Objects.hash(name);
         }
+
+        abstract void landedOn(Player p);
 
 
 }
