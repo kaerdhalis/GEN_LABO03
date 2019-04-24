@@ -2,31 +2,54 @@ import java.util.ArrayList;
 
 public class Board {
 
+    private static final int SQUARES = 40;
+    private static final int GO = 0;
     private ArrayList<Square> board;
 
+    /**
+     * constructeur
+     */
     public Board() {
-        board = new ArrayList<>(40);
+
+        board = new ArrayList<>(SQUARES);
 
         board.add(0, new Square("Go"));
-        for (int i = 1; i < 40; i++) {
+        for (int i = 1; i < SQUARES; i++) {
             board.add(i, new Square("Square " + i));
         }
+
     }
+
+    /**
+     *
+     * @return case de depart
+     */
      public Square StartCase() {
 
-             return board.get(0);
+             return board.get(GO);
         }
 
 
+    /**
+     *
+     * @param previous ancienne case
+     * @param value valeur tiree par le de
+     * @return nouvelle case
+     */
         public Square newPosition(Square previous ,int value){
 
         int index = board.indexOf(previous);
 
-        return board.get((index+value)%40);
+        return board.get((index+value)%SQUARES);
 
         }
 
-        public Square getSquare(int index){
+    /**
+     *
+     * @param index  de la case desiree
+     * @return case a l'index donne
+     */
+    public Square getSquare(int index){
 
         return board.get(index);
         }
