@@ -65,6 +65,9 @@ public class Player {
 
         System.out.println(name + " landed on  "+ piece.isOnSquare().getName());
 
+        piece.isOnSquare().landedOn(this);
+
+        System.out.println("");
     }
 
     /**

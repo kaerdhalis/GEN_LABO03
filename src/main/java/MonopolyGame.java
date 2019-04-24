@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MonopolyGame {
 
-    private static final int NUMBER_TURN = 20;
+    private static final int NUMBER_TURN = 40;
 
     public static void main(String[] args) {
 
