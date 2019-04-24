@@ -1,5 +1,4 @@
-import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.util.Random;
 
@@ -7,13 +6,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BoardTest {
 
+    @BeforeEach
+    void init(TestInfo testInfo) {
+        System.out.println("Start..." + testInfo.getDisplayName());
+    }
+
     @Test
+    @DisplayName("startCase Test")
     void startCase() {
         Board board = new Board();
         assertEquals(board.StartCase(),new Square("Go"));
     }
 
     @RepeatedTest(5)
+    @DisplayName("changePosition Test")
     void changePosition(){
 
 
