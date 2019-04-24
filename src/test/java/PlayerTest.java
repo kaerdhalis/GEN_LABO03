@@ -15,7 +15,8 @@ class PlayerTest {
     @Test
     @DisplayName("PalyerHasName Test")
     void PalyerHasName() {
-        Player player = new Player("bobby",new Piece("auto"),new Dice[2],new Board());
+        Player player = new Player("bobby",new Piece("auto"), new Dice[]{
+                new Dice(),new Dice()},new Board());
 
         //verifie que le nom du joueur est bon
         assertEquals("bobby",player.getName());
@@ -26,7 +27,8 @@ class PlayerTest {
     @Test
     @DisplayName("PlayerHasPiece Test")
     void PlayerHasPiece() {
-        Player player = new Player("bobby",new Piece("auto"),new Dice[2],new Board());
+        Player player = new Player("bobby",new Piece("auto"), new Dice[]{
+                new Dice(),new Dice()},new Board());
 
         //verifie que le joueur possede une piece
         assertNotNull(player.getPiece());
@@ -39,7 +41,8 @@ class PlayerTest {
     @DisplayName("pieceOnStartCase Test")
     void pieceOnStartCase(){
 
-        Player player = new Player("bobby",new Piece("auto"),new Dice[2],new Board());
+        Player player = new Player("bobby",new Piece("auto"), new Dice[]{
+                new Dice(),new Dice()},new Board());
 
         assertEquals(player.getPiece().isOnSquare(),player.getBoard().StartCase());
 

@@ -11,8 +11,6 @@ public class Dice {
 
         Random rn = new Random();
          faceValue = rn.nextInt(6) + 1;
-         System.out.println(faceValue);
-
     }
 
     /**

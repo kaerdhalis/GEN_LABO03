@@ -51,16 +51,16 @@ public class Player {
      */
     public void playTurn(){
 
+        dices[0].rollDice();
         dices[1].rollDice();
-        dices[2].rollDice();
-        int die = dices[1].getFaceValue() +dices[2].getFaceValue();
+        int die = dices[0].getFaceValue() +dices[1].getFaceValue();
 
-        System.out.println(name + "rolled a "+ die);
+        System.out.println(name + " rolled a "+ die);
 
         Square position = piece.isOnSquare();
         piece.movePiece(board.newPosition(position,die));
 
-        System.out.println(name + "landed on  "+ piece.isOnSquare().getName());
+        System.out.println(name + " landed on  "+ piece.isOnSquare().getName());
 
     }
 }
